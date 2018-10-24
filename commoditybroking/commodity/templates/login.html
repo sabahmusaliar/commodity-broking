@@ -1,0 +1,40 @@
+<div style="text-align:center;background-color:skyblue;">
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post" onsubmit="return get_action();">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button></a>
+   <a href ="/password_reset/">reset password</a><br><br><br><br>
+    <center><script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" data-sitekey="6LfMI3UUAAAAAOGobdQdfOVDV0LklKxghB-n_Ky-" data-callback="verifyCaptcha"></div>
+	<div id="g-recaptcha-error"></div></center>
+  </form>
+  <p><strong>-- OR --</strong></p>
+  <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
+{% endblock %}
+<br><br>
+<a href="/create/">register<br><br></div>
+
+<script>
+function get_action(form)
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('g-recaptcha-error').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+        document.getElementById('g-recaptcha-error').innerHTML="Captcha completed";
+        return true;
+    }
+}
+function verifyCaptcha(){
+    document.getElementById('g-recaptcha-error').innerHTML = '';
+}
+</script>
+
+

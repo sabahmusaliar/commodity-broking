@@ -1,0 +1,29 @@
+<center>
+
+
+
+
+<table border="2">
+	<tr><th colspan="6"><h4>buy Details</h4></th></tr>
+	<tr>
+		<th>user</th>
+		
+		<th>product_details</th>
+		<th>quantity</th>
+		
+		
+		
+	</tr>
+	{% for i in object_list %}
+	<tr>	
+		
+		<td>{{i.user}}</td>
+		<td>{{i.product_details}}</td>
+		<td>{{i.quantity}}</td>
+		
+		{% endfor %}
+	</tr>
+	
+      
+</table>
+</center>

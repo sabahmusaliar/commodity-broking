@@ -1,0 +1,32 @@
+<center>
+
+
+<table> 
+	<table border="2">
+	<tr><th colspan="6"><h4>customer details</h4></th></tr>
+	<tr>
+		<th>user</th>
+		<th>first_name</th>
+		<th>last_name</th>
+		<th>email</th>
+		<th>phone</th>
+		<th>adress</th>
+	</tr>
+					{% for i in object_list %}	
+						<tr>
+						
+					<td>{{i.user.username}}</td>
+					<td>{{i.user.first_name}}</td>
+					<td>{{i.user.last_name}}</td>
+					<td>{{i.user.email}}</td>
+
+
+
+
+						<td>{{i.phone}}</td>
+						<td>{{i.adress}}</td>
+					{% endfor %}
+				</tr>
+					
+</table></div>
+</center>
